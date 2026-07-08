@@ -142,3 +142,8 @@ body {
         height: auto;
     }
 }
+
+#nnvideo1{
+    background-image: url('netnieuws_video_01.png');
+    background-size: cover;
+}
