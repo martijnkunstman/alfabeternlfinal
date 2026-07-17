@@ -113,14 +113,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const appBtnLezen = document.getElementById('app-btn-lezen');
     const appBtnNetnieuws = document.getElementById('app-btn-netnieuws');
+    const infoBtn = document.getElementById('info');
     const startLezenAudio = new Audio('audio/start-lezen.mp3');
     const startNetnieuwsAudio = new Audio('audio/start-netnieuws.mp3');
+    const meerInformatieAudio = new Audio('audio/meer-informatie.mp3');
 
     function stopAppButtonAudio() {
         startLezenAudio.pause();
         startLezenAudio.currentTime = 0;
         startNetnieuwsAudio.pause();
         startNetnieuwsAudio.currentTime = 0;
+        meerInformatieAudio.pause();
+        meerInformatieAudio.currentTime = 0;
     }
 
     appBtnLezen.addEventListener('mouseenter', () => {
@@ -134,4 +138,10 @@ document.addEventListener('DOMContentLoaded', () => {
         startNetnieuwsAudio.play();
     });
     appBtnNetnieuws.addEventListener('mouseleave', stopAppButtonAudio);
+
+    infoBtn.addEventListener('mouseenter', () => {
+        stopAppButtonAudio();
+        meerInformatieAudio.play();
+    });
+    infoBtn.addEventListener('mouseleave', stopAppButtonAudio);
 });
