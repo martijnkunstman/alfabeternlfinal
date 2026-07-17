@@ -319,3 +319,48 @@ body {
 #info .link:hover {
     box-shadow: 0 0 0px rgba(255, 255, 255, 0);
 }
+
+.video-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.85);
+}
+
+.video-modal.hidden {
+    display: none !important;
+}
+
+#video-modal-player {
+    max-width: 92vw;
+    max-height: 92vh;
+    background-color: #000000;
+    border-radius: 1vh;
+    width: 92vw;
+    height: 92vw;
+}
+
+.video-modal-close {
+    position: absolute;
+    top: 2vh;
+    right: 2vh;
+    width: 6vh;
+    height: 6vh;
+    min-width: 44px;
+    min-height: 44px;
+    border-radius: 50%;
+    background-color: #fafafa;
+    border: 3px solid #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.video-modal-close svg {
+    width: 55%;
+    height: 55%;
+}

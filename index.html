@@ -53,7 +53,8 @@
                 <span class="word" data-i="24">voor</span> <span class="word" data-i="25">mensen</span> <span
                     class="word" data-i="26">die</span> <span class="word" data-i="27">al</span> <span class="word"
                     data-i="28">wat</span> <span class="word" data-i="29">beter</span> <span class="word"
-                    data-i="30">lezen</span></p>
+                    data-i="30">lezen</span>
+            </p>
             <button id="next-btn" class="icon-btn arrow-btn" aria-label="Ga verder" type="button">
                 <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path d="M8 5l8 7-8 7V5z" />
@@ -82,8 +83,8 @@
 
 
                         <div class="link" id="underlayvideo1">
-                            <div id="nnvideo1" class="container-video">
-                                <img class="link" src="video_overlay.png">
+                            <div class="container-video">
+                                <img src="video_overlay.png">
                             </div>
                         </div>
                         <div class="link" id="underlayvideo2">
@@ -109,8 +110,8 @@
                     </div>
                     <div class="containers-smaller">
                         <div class="link" id="underlayvideo3">
-                            <div id="nnvideo1" class="container-video">
-                                <img class="link" src="video_overlay.png">
+                            <div class="container-video">
+                                <img src="video_overlay.png">
                             </div>
                         </div>
                         <div class="link" id="underlayvideo4">
@@ -130,6 +131,15 @@
                 </div>
             </div>
         </div>
+    </div>
+
+    <div id="video-modal" class="video-modal hidden">
+        <video id="video-modal-player" controls playsinline autoplay></video>
+        <button id="video-modal-close" class="video-modal-close" aria-label="Sluiten" type="button">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6 6l12 12M18 6L6 18" stroke="#000000" stroke-width="2.5" stroke-linecap="round" />
+            </svg>
+        </button>
     </div>
 
     <script src="app.js"></script>
