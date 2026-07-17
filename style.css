@@ -22,6 +22,91 @@ body {
     height: 100vh;
 }
 
+/* screens */
+
+.screen.hidden {
+    display: none !important;
+}
+
+#screen-front {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+.front-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 70ch;
+    padding: 4vh 6vw;
+    text-align: center;
+}
+
+.icon-btn {
+    background-color: #fafafa;
+    border: 3px solid #000000;
+    border-radius: 50%;
+    width: 8vh;
+    height: 8vh;
+    min-width: 56px;
+    min-height: 56px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 0 0px rgba(255, 255, 255, 0);
+    transform: scale(1);
+    transition: all 0.3s ease;
+}
+
+.icon-btn:hover {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 1);
+    transform: scale(1.05);
+}
+
+.icon-btn svg {
+    width: 78%;
+    height: 78%;
+    fill: #000000;
+}
+
+#audio-btn {
+    margin-bottom: 3vh;
+}
+
+#audio-btn.speaking {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 1);
+}
+
+#audio-btn.speaking svg {
+    fill: #2176ad;
+}
+
+#front-text {
+    color: #000000;
+    font-size: 1.4rem;
+    line-height: 1.6;
+    margin: 0 0 4vh 0;
+}
+
+#front-text .word {
+    border-radius: 0.3vh;
+    padding: 0 0.15em;
+    margin: 0 -0.15em;
+}
+
+#front-text .word.active {
+    background-color: #fff59d;
+}
+
+.arrow-btn {
+    margin-top: 1vh;
+}
+
 /* apps and extra */
 
 #apps{
