@@ -118,6 +118,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const startNetnieuwsAudio = new Audio('audio/start-netnieuws.mp3');
     const meerInformatieAudio = new Audio('audio/meer-informatie.mp3');
 
+    const underlayVideoAudios = [
+        [document.getElementById('underlayvideo1'), new Audio('audio/underlayvideo1.mp3')],
+        [document.getElementById('underlayvideo2'), new Audio('audio/underlayvideo2.mp3')],
+        [document.getElementById('underlayvideo3'), new Audio('audio/underlayvideo3.mp3')],
+        [document.getElementById('underlayvideo4'), new Audio('audio/underlayvideo4.mp3')]
+    ];
+
     function stopAppButtonAudio() {
         startLezenAudio.pause();
         startLezenAudio.currentTime = 0;
@@ -125,6 +132,10 @@ document.addEventListener('DOMContentLoaded', () => {
         startNetnieuwsAudio.currentTime = 0;
         meerInformatieAudio.pause();
         meerInformatieAudio.currentTime = 0;
+        underlayVideoAudios.forEach(([, audio]) => {
+            audio.pause();
+            audio.currentTime = 0;
+        });
     }
 
     appBtnLezen.addEventListener('mouseenter', () => {
@@ -144,4 +155,12 @@ document.addEventListener('DOMContentLoaded', () => {
         meerInformatieAudio.play();
     });
     infoBtn.addEventListener('mouseleave', stopAppButtonAudio);
+
+    underlayVideoAudios.forEach(([el, audio]) => {
+        el.addEventListener('mouseenter', () => {
+            stopAppButtonAudio();
+            audio.play();
+        });
+        el.addEventListener('mouseleave', stopAppButtonAudio);
+    });
 });
