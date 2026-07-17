@@ -3,9 +3,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const appsScreen = document.getElementById('screen-apps');
     const nextBtn = document.getElementById('next-btn');
     const audioBtn = document.getElementById('audio-btn');
+    const audioBtnHd = document.getElementById('audio-btn-hd');
     const wordEls = document.querySelectorAll('#front-text .word');
 
     const welcomeAudio = new Audio('audio/welkom.mp3');
+    const welcomeAudioHd = new Audio('audio/welkom-hd.mp3');
     let cues = [];
 
     fetch('audio/welkom.json')
@@ -52,6 +54,16 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    function stopWelcomeAudio() {
+        welcomeAudio.pause();
+        welcomeAudio.currentTime = 0;
+    }
+
+    function stopWelcomeAudioHd() {
+        welcomeAudioHd.pause();
+        welcomeAudioHd.currentTime = 0;
+    }
+
     welcomeAudio.addEventListener('play', startPolling);
     welcomeAudio.addEventListener('timeupdate', () => highlightForTime(welcomeAudio.currentTime));
     welcomeAudio.addEventListener('ended', () => {
@@ -64,9 +76,12 @@ document.addEventListener('DOMContentLoaded', () => {
         audioBtn.classList.remove('speaking');
     });
 
+    welcomeAudioHd.addEventListener('ended', () => audioBtnHd.classList.remove('speaking'));
+    welcomeAudioHd.addEventListener('pause', () => audioBtnHd.classList.remove('speaking'));
+
     nextBtn.addEventListener('click', () => {
-        welcomeAudio.pause();
-        welcomeAudio.currentTime = 0;
+        stopWelcomeAudio();
+        stopWelcomeAudioHd();
         clearHighlight();
         frontScreen.classList.add('hidden');
         appsScreen.classList.remove('hidden');
@@ -74,13 +89,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
     audioBtn.addEventListener('click', () => {
         if (!welcomeAudio.paused) {
-            welcomeAudio.pause();
-            welcomeAudio.currentTime = 0;
+            stopWelcomeAudio();
             clearHighlight();
             return;
         }
 
+        stopWelcomeAudioHd();
         audioBtn.classList.add('speaking');
         welcomeAudio.play();
+    });
+
+    audioBtnHd.addEventListener('click', () => {
+        if (!welcomeAudioHd.paused) {
+            stopWelcomeAudioHd();
+            return;
+        }
+
+        stopWelcomeAudio();
+        clearHighlight();
+        audioBtnHd.classList.add('speaking');
+        welcomeAudioHd.play();
     });
 });

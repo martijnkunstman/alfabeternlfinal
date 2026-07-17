@@ -74,15 +74,20 @@ body {
     fill: #000000;
 }
 
-#audio-btn {
+.audio-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 2vh;
     margin-bottom: 3vh;
 }
 
-#audio-btn.speaking {
+#audio-btn.speaking,
+#audio-btn-hd.speaking {
     box-shadow: 0 0 20px rgba(255, 255, 255, 1);
 }
 
-#audio-btn.speaking svg {
+#audio-btn.speaking svg,
+#audio-btn-hd.speaking svg {
     fill: #2176ad;
 }
 
