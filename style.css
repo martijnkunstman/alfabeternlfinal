@@ -276,9 +276,29 @@ body {
     }
 }
 
-#nnvideo1{
-    background-image: url('netnieuws_video_01.png');
-    background-size: cover;
+#underlayvideo1{
+    background-image: url('alfabeter_video_1.png');
+    background-size: 75%;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+}
+#underlayvideo2{
+    background-image: url('alfabeter_video_2.png');
+    background-size: 75%;
+    background-repeat: no-repeat;
+     background-position: 50% 50%;
+}
+#underlayvideo3{
+    background-image: url('netnieuws_video_1.png');
+    background-size: 75%;
+    background-repeat: no-repeat;
+     background-position: 50% 50%;
+}
+#underlayvideo4{
+    background-image: url('netnieuws_video_2.png');
+    background-size: 75%;
+    background-repeat: no-repeat;
+     background-position: 50% 50%;
 }
 
 .link {
