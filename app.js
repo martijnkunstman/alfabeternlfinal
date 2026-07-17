@@ -195,4 +195,22 @@ document.addEventListener('DOMContentLoaded', () => {
     videoModal.addEventListener('click', (e) => {
         if (e.target === videoModal) closeVideoModal();
     });
+
+    const infoModal = document.getElementById('info-modal');
+    const infoModalClose = document.getElementById('info-modal-close');
+
+    function openInfoModal() {
+        stopAppButtonAudio();
+        infoModal.classList.remove('hidden');
+    }
+
+    function closeInfoModal() {
+        infoModal.classList.add('hidden');
+    }
+
+    infoBtn.addEventListener('click', openInfoModal);
+    infoModalClose.addEventListener('click', closeInfoModal);
+    infoModal.addEventListener('click', (e) => {
+        if (e.target === infoModal) closeInfoModal();
+    });
 });

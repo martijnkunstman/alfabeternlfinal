@@ -364,3 +364,15 @@ body {
     width: 55%;
     height: 55%;
 }
+
+.info-modal-content {
+    max-width: 92vw;
+    max-height: 92vh;
+    width: 80vw;
+    overflow-y: auto;
+    background-color: #fafafa;
+    color: #000000;
+    border-radius: 1vh;
+    padding: 4vh 4vw;
+    box-sizing: border-box;
+}
