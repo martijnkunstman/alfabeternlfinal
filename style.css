@@ -170,6 +170,11 @@ body {
     border-radius: 1vh;
 }
 
+.container-app:hover .link {
+    transform: scale(1);
+    opacity: 0.25;
+}
+
 .play-overlay {
     position: absolute;
     top: 50%;
