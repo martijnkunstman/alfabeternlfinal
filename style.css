@@ -151,6 +151,13 @@ body {
     margin: 5vh;
 }
 
+#lezen-app > a,
+#netnieuws-app > a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
 .container-app {
     /* background-color: red; */
     position: relative;
