@@ -46,6 +46,13 @@ body {
     text-align: center;
 }
 
+.front-logo {
+    max-width: 40vh;
+    width: 100%;
+    height: auto;
+    margin-bottom: 3vh;
+}
+
 .icon-btn {
     background-color: #fafafa;
     border: 3px solid #000000;
