@@ -110,6 +110,10 @@ body {
 
 .arrow-btn {
     margin-top: 1vh;
+    width: 12vh;
+    height: 12vh;
+    min-width: 84px;
+    min-height: 84px;
 }
 
 /* apps and extra */
@@ -149,19 +153,51 @@ body {
 
 .container-app {
     /* background-color: red; */
+    position: relative;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     width: 50vh;
     margin-bottom: 2vh;
-    box-sizing:border-box;
+    box-sizing: border-box;
     border-radius: 2vh;
+    border: 3px solid #000000;
 }
 
 .container-app img {
     width: 100%;
     border-radius: 1vh;
+}
+
+.play-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 15vh;
+    height: 15vh;
+    min-width: 84px;
+    min-height: 84px;
+    border-radius: 50%;
+    background-color: #fafafa;
+    border: 3px solid #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+}
+
+.container-app:hover .play-overlay {
+    opacity: 1;
+}
+
+.play-overlay svg {
+    width: 45%;
+    height: 45%;
+    fill: #000000;
 }
 
 .container-video {

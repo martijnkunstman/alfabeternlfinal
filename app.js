@@ -110,4 +110,28 @@ document.addEventListener('DOMContentLoaded', () => {
         audioBtnHd.classList.add('speaking');
         welcomeAudioHd.play();
     });
+
+    const appBtnLezen = document.getElementById('app-btn-lezen');
+    const appBtnNetnieuws = document.getElementById('app-btn-netnieuws');
+    const startLezenAudio = new Audio('audio/start-lezen.mp3');
+    const startNetnieuwsAudio = new Audio('audio/start-netnieuws.mp3');
+
+    function stopAppButtonAudio() {
+        startLezenAudio.pause();
+        startLezenAudio.currentTime = 0;
+        startNetnieuwsAudio.pause();
+        startNetnieuwsAudio.currentTime = 0;
+    }
+
+    appBtnLezen.addEventListener('mouseenter', () => {
+        stopAppButtonAudio();
+        startLezenAudio.play();
+    });
+    appBtnLezen.addEventListener('mouseleave', stopAppButtonAudio);
+
+    appBtnNetnieuws.addEventListener('mouseenter', () => {
+        stopAppButtonAudio();
+        startNetnieuwsAudio.play();
+    });
+    appBtnNetnieuws.addEventListener('mouseleave', stopAppButtonAudio);
 });
