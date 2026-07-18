@@ -38,8 +38,8 @@ Zoek op: Hoe installeer ik een website als app via mijn browser?
 
 NOG DOEN:
 
-xx 1 eu -> nl
-xx 2 op server zetten
+ok 1 eu -> nl
+ok 2 op server zetten
 ok 3 christam carol eruit
 ok 4 tekst toevoegen: zoek op....
 
